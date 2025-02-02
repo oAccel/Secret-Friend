@@ -21,3 +21,17 @@ function atualizarListaAmigos() {
         listaAmigosElement.appendChild(li);
     });
 }
+
+
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert('A lista de amigos está vazia. Adicione o nome dos seus amigos antes de sortear');
+        return;
+
+    }
+    let aleatorizar = Math.floor(Math.random() * amigos.length);
+    let sorteado = amigos[aleatorizar];
+
+    document.getElementById('resultado').innerHTML = `Seu amigo sorteado foi : ${sorteado}`;
+
+}

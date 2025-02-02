@@ -1,14 +1,23 @@
-let amigosLista = [];
+let amigos = [];
 
 
 function adicionarAmigo() {
-    let nomes = document.getElementById("amigos");
-    amigosLista.push(nomes);
-    console.log(amigosLista);
+    const nomeAmigo = document.getElementById('nomeAmigo').value.trim();
+    if (nomeAmigo === "") {
+        alert("Insira um nome.");
+        return;
+    }
+    amigos.push(nomeAmigo);
+    atualizarListaAmigos();
 }
 
 
-
-function limpar() {
-    nome
+function atualizarListaAmigos() {
+    const listaAmigosElement = document.getElementById('listaAmigos');
+    listaAmigosElement.innerHTML = "";
+    amigos.forEach(amigo => {
+        const li = document.createElement('li');
+        li.textContent = amigo;
+        listaAmigosElement.appendChild(li);
+    });
 }
